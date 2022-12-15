@@ -40,7 +40,7 @@ def contact(request):
 
     return render(request, 'vista\contacto.html', data)
 
-
+@login_required
 def products(request):
     dietas = Dietas.objects.filter(user=request.user)
 
@@ -202,7 +202,7 @@ def Profile(request):
 #     return render(request, 'imc\listardietas.html',data)
 
 
-
+@login_required
 def Rango(request, *args, **kwargs):
     
     imc = IMCalc.objects.filter(user=request.user) 
